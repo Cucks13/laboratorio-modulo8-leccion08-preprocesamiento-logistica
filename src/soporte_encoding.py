@@ -466,6 +466,8 @@ class Encoding:
             
             # transformamos los datos de las columnas almacenadas en la variable col_code y añadimos la variable respuesta para que calcule la media ponderada para cada categória de las variables
             target_encoder_trans = target_encoder.fit_transform(self.dataframe[col_encode], self.dataframe[[self.variable_respuesta]])
+            print(self.dataframe[col_encode])
+            print(self.dataframe[self.variable_respuesta])
             
             # creamos un DataFrame con los resultados de la transformación
             target_encoder_df = pd.DataFrame(target_encoder_trans, columns=target_encoder.get_feature_names_out())
